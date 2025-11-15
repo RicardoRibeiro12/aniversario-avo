@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parabéns Avô - Sporting CP</title>
+
+    <link rel="icon" type="image/svg+xml" href="./assets/image/sporting-logo.svg">
+    <link rel="shortcut icon" type="image/svg+xml" href="./assets/image/sporting-logo.svg">
+    
     <style>
         * {
             margin: 0;
@@ -23,8 +27,8 @@
         /* Hero Section */
         .hero {
             height: 100vh;
-            background-image: linear-gradient(rgba(0, 77, 41, 0.4), rgba(0, 102, 46, 0.5)), 
-                              url('https://www.fenwickiribarren.com/wp-content/uploads/2025/07/01_project_image_2560x1065px.jpg');
+            background-image: linear-gradient(rgba(0, 77, 41, 0.4), rgba(0, 102, 46, 0.5)),
+                url('./assets/image/sporting-estadio.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -44,19 +48,22 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: repeating-linear-gradient(
-                0deg,
-                transparent,
-                transparent 2px,
-                rgba(255, 255, 255, 0.03) 2px,
-                rgba(255, 255, 255, 0.03) 4px
-            );
+            background: repeating-linear-gradient(0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(255, 255, 255, 0.03) 2px,
+                    rgba(255, 255, 255, 0.03) 4px);
             animation: scan 8s linear infinite;
         }
 
         @keyframes scan {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(50px); }
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(50px);
+            }
         }
 
         .hero-content {
@@ -69,6 +76,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -87,8 +95,15 @@
         }
 
         @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
         }
 
         .hero h1 {
@@ -124,8 +139,15 @@
         }
 
         @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         .cta-button:hover {
@@ -145,15 +167,22 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translate(-50%, 0); }
-            50% { transform: translate(-50%, 10px); }
+
+            0%,
+            100% {
+                transform: translate(-50%, 0);
+            }
+
+            50% {
+                transform: translate(-50%, 10px);
+            }
         }
 
         /* Voucher Section */
         .voucher-section {
             min-height: 100vh;
-            background-image: linear-gradient(rgba(0, 77, 41, 0.95), rgba(0, 102, 46, 0.95)), 
-                              url('https://www.fenwickiribarren.com/wp-content/uploads/2025/07/01_project_image_2560x1065px.jpg');
+            background-image: linear-gradient(rgba(0, 77, 41, 0.95), rgba(0, 102, 46, 0.95)),
+                url('https://www.fenwickiribarren.com/wp-content/uploads/2025/07/01_project_image_2560x1065px.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -179,6 +208,7 @@
                 opacity: 0;
                 transform: translateY(50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -200,19 +230,22 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 10px,
-                rgba(255, 255, 255, 0.05) 10px,
-                rgba(255, 255, 255, 0.05) 20px
-            );
+            background: repeating-linear-gradient(45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(255, 255, 255, 0.05) 10px,
+                    rgba(255, 255, 255, 0.05) 20px);
             animation: slide 20s linear infinite;
         }
 
         @keyframes slide {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(50px, 50px);
+            }
         }
 
         .logo-container {
@@ -230,8 +263,10 @@
         }
 
         .logo {
-            width: 90px;
-            height: 90px;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 5px;
         }
 
         .voucher-header h2 {
@@ -347,7 +382,7 @@
             .hero h1 {
                 font-size: 2.5em;
             }
-            
+
             .hero p {
                 font-size: 1.3em;
             }
@@ -360,7 +395,7 @@
             .message {
                 font-size: 1.4em;
             }
-            
+
             .voucher-body {
                 padding: 30px 20px;
             }
@@ -371,9 +406,8 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <img src="https://www.wikisporting.com/images/thumb/0/08/Sporting_Clube_de_Portugal_-_Emblema.png/250px-Sporting_Clube_de_Portugal_-_Emblema.png" 
-                 alt="Sporting CP Logo" 
-                 class="hero-logo">
+            <img src="./assets/image/sporting-logo.svg"
+                alt="Sporting CP Logo" class="hero-logo">
             <h1>Parabéns Avô!</h1>
             <p>Uma surpresa especial para ti 💚</p>
             <a href="#voucher" class="cta-button">Aqui tens o teu presente! 🎁</a>
@@ -384,26 +418,22 @@
     <!-- Voucher Section -->
     <section id="voucher" class="voucher-section">
         <div class="voucher-container">
-            <div class="voucher-header">
+            <div class="voucher-header">        
                 <div class="logo-container">
-                    <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="50" cy="50" r="45" fill="#006633"/>
-                        <circle cx="50" cy="50" r="35" fill="white"/>
-                        <path d="M50 20 L60 35 L50 32 L40 35 Z" fill="#006633"/>
-                        <text x="50" y="58" font-size="24" font-weight="bold" text-anchor="middle" fill="#006633">SCP</text>
-                    </svg>
+                    <img src="./assets/image/sporting-logo.svg"
+                        alt="Sporting CP Logo" class="logo" style="width: 100%; height: 100%; object-fit: contain;">
                 </div>
                 <h2>Parabéns Avô!</h2>
                 <p class="subtitle">Voucher Especial</p>
             </div>
-
+        
             <div class="voucher-body">
                 <div class="message">
                     Tens aqui o teu voucher para ir ver o teu grande amor
                 </div>
-
+        
                 <div class="decorative-line"></div>
-
+        
                 <div class="stadium-name">
                     ⚽ SPORTING CLUBE DE PORTUGAL ⚽
                 </div>
@@ -440,18 +470,29 @@
         let isPlaying = false;
 
         // Tentar reproduzir automaticamente quando a página carregar
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
+            // Define o volume para 70% (ajusta se quiseres)
+            audio.volume = 0.7;
+
             audio.play().then(() => {
                 isPlaying = true;
                 audioControl.textContent = '🔊';
-            }).catch(() => {
-                console.log('Autoplay bloqueado. Clica no botão para ouvir a música.');
+                console.log('Música a tocar automaticamente!');
+            }).catch((error) => {
+                console.log('Autoplay bloqueado pelo browser. Clica no botão para ouvir a música.');
                 audioControl.textContent = '🔇';
+                // Tenta reproduzir ao primeiro clique na página
+                document.body.addEventListener('click', function playOnClick() {
+                    audio.play();
+                    isPlaying = true;
+                    audioControl.textContent = '🔊';
+                    document.body.removeEventListener('click', playOnClick);
+                }, { once: true });
             });
         });
 
         // Controlar play/pause com o botão
-        audioControl.addEventListener('click', function() {
+        audioControl.addEventListener('click', function () {
             if (isPlaying) {
                 audio.pause();
                 audioControl.textContent = '🔇';
