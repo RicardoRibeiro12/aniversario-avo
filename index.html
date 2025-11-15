@@ -429,6 +429,155 @@
                 padding: 30px 20px;
             }
         }
+
+        /* Secção de Galeria */
+        .gallery-section {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #004d29 0%, #00662e 50%, #004d29 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .gallery-title {
+            color: white;
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 60px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            animation: slideInUp 1.2s ease-out;
+        }
+
+        /* Cards estilo voucher */
+        .photo-card-voucher {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .photo-card-voucher:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+        }
+
+        .photo-card-header {
+            background: linear-gradient(135deg, #006633 0%, #00853f 100%);
+            padding: 30px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .photo-card-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(255, 255, 255, 0.05) 10px,
+                    rgba(255, 255, 255, 0.05) 20px);
+            animation: slide 20s linear infinite;
+        }
+
+        .photo-frame-circle {
+            background: white;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .photo-card-header h3 {
+            color: white;
+            font-size: 1.5em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .photo-card-body {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .photo-placeholder {
+            width: 100%;
+            aspect-ratio: 3/3;
+            background: #f0f0f0;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 3px solid #006633;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-card-voucher:hover .photo-placeholder img {
+            transform: scale(1.1);
+        }
+
+        .photo-description {
+            color: #006633;
+            font-size: 1.1em;
+            font-weight: bold;
+            font-style: italic;
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .gallery-title {
+                font-size: 2em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -462,7 +611,6 @@
 
                 <div class="decorative-line"></div>
 
-                <!-- NOVA SECÇÃO: Oferecido por -->
                 <div class="offered-by">
                     <p class="offered-label">Oferecido com muito carinho pela:</p>
                     <p class="offered-names">Família</p>
@@ -484,6 +632,65 @@
 
             <div class="footer">
                 Desfruta do jogo e apoia o teu Sporting! 💚🦁
+            </div>
+        </div>
+    </section>
+
+    <!-- Adiciona esta secção DEPOIS da voucher-section -->
+
+    <!-- Secção de Galeria de Fotos -->
+    <section class="gallery-section">
+        <div class="gallery-container">
+            <h2 class="gallery-title">Momentos Inesquecíveis 💚</h2>
+
+            <div class="gallery-grid">
+                <!-- Card 1 -->
+                <div class="photo-card-voucher">
+                    <div class="photo-card-header">
+                        <div class="photo-frame-circle">
+                            <span style="font-size: 2em;">📸</span>
+                        </div>
+                        <h3>No Estádio</h3>
+                    </div>
+                    <div class="photo-card-body">
+                        <div class="photo-placeholder">
+                            <img src="./assets/image/avo-foto1.jpg" alt="Avô no estádio">
+                        </div>
+                        <p class="photo-description">A viver o amor pelo Sporting</p>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="photo-card-voucher">
+                    <div class="photo-card-header">
+                        <div class="photo-frame-circle">
+                            <span style="font-size: 2em;">💚</span>
+                        </div>
+                        <h3>Sportinguista</h3>
+                    </div>
+                    <div class="photo-card-body">
+                        <div class="photo-placeholder">
+                            <img src="./assets/image/avo-foto2.jpg" alt="Avô sportinguista">
+                        </div>
+                        <p class="photo-description">Verde e branco no coração</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="photo-card-voucher">
+                    <div class="photo-card-header">
+                        <div class="photo-frame-circle">
+                            <span style="font-size: 2em;">🦁</span>
+                        </div>
+                        <h3>Celebração</h3>
+                    </div>
+                    <div class="photo-card-body">
+                        <div class="photo-placeholder">
+                            <img src="./assets/image/avo-foto3.jpg" alt="Avô a festejar">
+                        </div>
+                        <p class="photo-description">Sempre a festejar vitórias</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
