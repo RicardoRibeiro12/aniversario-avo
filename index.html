@@ -7,7 +7,7 @@
 
     <link rel="icon" type="image/svg+xml" href="./assets/image/sporting-logo.svg">
     <link rel="shortcut icon" type="image/svg+xml" href="./assets/image/sporting-logo.svg">
-    
+
     <style>
         * {
             margin: 0;
@@ -17,6 +17,9 @@
 
         html {
             scroll-behavior: smooth;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
         }
 
         body {
@@ -292,6 +295,32 @@
             text-align: center;
         }
 
+        /* Secção "Oferecido por" */
+        .offered-by {
+            margin-top: 40px;
+            padding: 25px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 10px;
+            border: 2px dashed #006633;
+        }
+
+        .offered-label {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            font-style: italic;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .offered-names {
+            color: #006633;
+            font-size: 1.4em;
+            font-weight: bold;
+            font-family: 'Brush Script MT', cursive, 'Arial';
+            margin: 0;
+        }
+
         .message {
             font-size: 1.8em;
             color: #006633;
@@ -406,8 +435,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <img src="./assets/image/sporting-logo.svg"
-                alt="Sporting CP Logo" class="hero-logo">
+            <img src="./assets/image/sporting-logo.svg" alt="Sporting CP Logo" class="hero-logo">
             <h1>Parabéns Avô!</h1>
             <p>Uma surpresa especial para ti 💚</p>
             <a href="#voucher" class="cta-button">Aqui tens o teu presente! 🎁</a>
@@ -418,22 +446,28 @@
     <!-- Voucher Section -->
     <section id="voucher" class="voucher-section">
         <div class="voucher-container">
-            <div class="voucher-header">        
+            <div class="voucher-header">
                 <div class="logo-container">
-                    <img src="./assets/image/sporting-logo.svg"
-                        alt="Sporting CP Logo" class="logo" style="width: 100%; height: 100%; object-fit: contain;">
+                    <img src="./assets/image/sporting-logo.svg" alt="Sporting CP Logo" class="logo"
+                        style="width: 100%; height: 100%; object-fit: contain;">
                 </div>
                 <h2>Parabéns Avô!</h2>
                 <p class="subtitle">Voucher Especial</p>
             </div>
-        
+
             <div class="voucher-body">
                 <div class="message">
                     Tens aqui o teu voucher para ir ver o teu grande amor
                 </div>
-        
+
                 <div class="decorative-line"></div>
-        
+
+                <!-- NOVA SECÇÃO: Oferecido por -->
+                <div class="offered-by">
+                    <p class="offered-label">Oferecido com muito carinho pela:</p>
+                    <p class="offered-names">Família</p>
+                </div>
+
                 <div class="stadium-name">
                     ⚽ SPORTING CLUBE DE PORTUGAL ⚽
                 </div>
