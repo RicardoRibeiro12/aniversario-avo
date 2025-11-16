@@ -24,13 +24,13 @@
 
         body {
             font-family: 'Arial', sans-serif;
-            overflow: hidden;
+            overflow-x: hidden;
         }
 
         /* Countdown Screen */
         .countdown-screen {
             width: 100%;
-            height: 100vh;
+            min-height: 100vh;
             background-image: linear-gradient(rgba(0, 77, 41, 0.9), rgba(0, 102, 46, 0.9)),
                 url('./assets/image/sporting-estadio.jpg');
             background-size: cover;
@@ -39,6 +39,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            padding: 40px 20px;
         }
 
         .countdown-logo {
@@ -53,15 +54,8 @@
         }
 
         @keyframes pulse {
-
-            0%,
-            100% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.05);
-            }
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
         .countdown-title {
@@ -124,6 +118,170 @@
             background: rgba(0, 102, 51, 0.5);
             border-radius: 10px;
             backdrop-filter: blur(10px);
+            margin-bottom: 40px;
+        }
+
+        /* Botão Surpresa do Dia */
+        .surprise-button {
+            display: inline-block;
+            padding: 25px 60px;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            color: #006633;
+            text-decoration: none;
+            font-size: 1.4em;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.5);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: bounce 2s ease-in-out infinite;
+            text-align: center;
+            border: 3px solid white;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .surprise-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 50px rgba(255, 215, 0, 0.7);
+            animation: none;
+        }
+
+        .scroll-indicator {
+            margin-top: 30px;
+            color: white;
+            font-size: 2em;
+            animation: float 2s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+        }
+
+        /* Secção Foto do Dia */
+        .daily-photo-section {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #004d29 0%, #00662e 50%, #004d29 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+        }
+
+        .daily-photo-container {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .daily-photo-title {
+            color: white;
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .daily-card {
+            background: white;
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            animation: slideInUp 1.2s ease-out;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .daily-card-header {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            padding: 30px;
+            border-radius: 20px 20px 0 0;
+            margin: -40px -40px 30px -40px;
+        }
+
+        .daily-card-header h3 {
+            color: #006633;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .daily-card-date {
+            color: #666;
+            font-size: 1.2em;
+            font-style: italic;
+        }
+
+        .daily-card img {
+            width: 100%;
+            max-width: 600px;
+            aspect-ratio: 3/3;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 5px solid #FFD700;
+            margin-bottom: 30px;
+        }
+
+        .daily-card p {
+            color: #006633;
+            font-size: 1.5em;
+            font-weight: bold;
+            font-style: italic;
+            margin: 0;
+        }
+
+        .no-photo-message {
+            color: #666;
+            font-size: 1.3em;
+            padding: 60px 40px;
+            line-height: 1.8;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 40px;
+            background: #006633;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: #00853f;
+            transform: scale(1.05);
         }
 
         @media (max-width: 768px) {
@@ -154,6 +312,19 @@
                 font-size: 1em;
                 padding: 15px;
             }
+
+            .surprise-button {
+                font-size: 1.1em;
+                padding: 20px 40px;
+            }
+
+            .daily-photo-title {
+                font-size: 2em;
+            }
+
+            .daily-card-header h3 {
+                font-size: 1.8em;
+            }
         }
     </style>
 </head>
@@ -162,7 +333,7 @@
         <img src="./assets/image/sporting-logo.svg" alt="Sporting CP" class="countdown-logo">
         <h1 class="countdown-title">🎉 Parabéns Avô! 🎉</h1>
         <p class="countdown-subtitle">Uma surpresa especial está a caminho...</p>
-
+        
         <div class="countdown-timer">
             <div class="countdown-block">
                 <span class="countdown-number" id="days">00</span>
@@ -185,14 +356,28 @@
         <div class="countdown-message">
             💚 A tua surpresa será revelada no dia 23 de Novembro à meia-noite! 🦁
         </div>
+
+        <a href="#daily-surprise" class="surprise-button">
+            🎁 Hoje tens aqui uma surpresa!<br>
+            <span style="font-size: 0.7em;">Amanhã volta cá para outra 💚</span>
+        </a>
+
+        <div class="scroll-indicator">↓</div>
     </div>
+
+    <!-- Secção Foto do Dia -->
+    <section id="daily-surprise" class="daily-photo-section">
+        <div class="daily-photo-container">
+            <h2 class="daily-photo-title">✨ Surpresa do Dia ✨</h2>
+            <div id="dailyPhotoCard" class="daily-card">
+                <!-- JavaScript vai preencher aqui -->
+            </div>
+        </div>
+    </section>
 
     <script>
         // Data alvo: 23 de Novembro de 2025 às 00:00:00
         const targetDate = new Date('2025-11-23T00:00:00').getTime();
-
-        // const targetDate = new Date(Date.now() + 60000).getTime(); // 1 minuto a partir de agora
-
 
         function updateCountdown() {
             const now = new Date().getTime();
@@ -220,7 +405,94 @@
 
         // Atualiza a cada segundo
         const countdownInterval = setInterval(updateCountdown, 1000);
-        updateCountdown();
+        updateCountdown(); // Executa imediatamente
+
+        // Fotos Diárias
+        const dailyPhotos = {
+            '2025-11-16': {
+                image: './assets/image/daily/dia16.png',
+                title: 'Dia 16 de Novembro',
+                description: 'Começando a contagem regressiva! 💚🦁'
+            },
+            '2025-11-17': {
+                image: './assets/image/daily/dia17.jpg',
+                title: 'Dia 17 de Novembro',
+                description: 'Começando a contagem regressiva! 💚🦁'
+            },
+            '2025-11-18': {
+                image: './assets/image/daily/dia18.jpg',
+                title: 'Dia 18 de Novembro',
+                description: 'Mais um dia de memórias incríveis!'
+            },
+            '2025-11-19': {
+                image: './assets/image/daily/dia19.jpg',
+                title: 'Dia 19 de Novembro',
+                description: 'Faltam 4 dias para o grande dia! ⚽'
+            },
+            '2025-11-20': {
+                image: './assets/image/daily/dia20.jpg',
+                title: 'Dia 20 de Novembro',
+                description: 'A emoção está a crescer!'
+            },
+            '2025-11-21': {
+                image: './assets/image/daily/dia21.png',
+                title: 'Dia 21 de Novembro',
+                description: 'Quase lá... faltam 2 dias! 💚'
+            },
+            '2025-11-22': {
+                image: './assets/image/daily/dia22.jpg',
+                title: 'Dia 22 de Novembro',
+                description: 'Amanhã é o grande dia! 🎉'
+            }
+        };
+
+        function displayDailyPhoto() {
+            const today = new Date();
+            const dateKey = today.toISOString().split('T')[0];
+            const photoData = dailyPhotos[dateKey];
+            
+            const container = document.getElementById('dailyPhotoCard');
+            
+            if (photoData) {
+                container.innerHTML = `
+                    <div class="daily-card-header">
+                        <h3>${photoData.title}</h3>
+                        <p class="daily-card-date">Memória Especial 📸</p>
+                    </div>
+                    <img src="${photoData.image}" alt="${photoData.title}">
+                    <p>${photoData.description}</p>
+                    <a href="#" class="back-button">↑ Voltar ao Countdown</a>
+                `;
+            } else {
+                container.innerHTML = `
+                    <p class="no-photo-message">
+                        🗓️ A surpresa de hoje ainda não está disponível!<br><br>
+                        Volta amanhã para descobrir mais uma memória especial! 💚🦁<br><br>
+                        A contagem decrescente continua... 
+                    </p>
+                    <a href="#" class="back-button">↑ Voltar ao Countdown</a>
+                `;
+            }
+        }
+
+        // Executa quando a página carrega
+        window.addEventListener('load', displayDailyPhoto);
+
+        // Smooth scroll
+        document.addEventListener('click', function(e) {
+            if (e.target.matches('a[href^="#"]')) {
+                e.preventDefault();
+                const targetId = e.target.getAttribute('href');
+                if (targetId === '#') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            }
+        });
     </script>
 </body>
 </html>
